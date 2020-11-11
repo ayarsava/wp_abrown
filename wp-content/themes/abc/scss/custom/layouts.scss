@@ -1,0 +1,197 @@
+///*** MENU ***///
+header {
+    background: #000;
+    padding: 1rem 0px;
+    nav.navbar {
+        // brand
+        .navbar-brand {
+            img {}
+        }
+        // hambur
+        .navbar-toggler {
+            .navbar-toggler-icon {
+
+            }
+        }
+        // items de menu
+        #navbar {
+            ul.navbar-nav {
+                li.nav-item {
+                    a.nav-link {
+                        text-transform: uppercase;
+                        font-size: .8rem;
+                        color: #d12a53;
+                    }
+                    &.active a.nav-link {
+                        color: #ffffff;
+                    }
+                    &.dropdown .dropdown-menu {
+                        top:49px;
+                        left: -17px;
+                        background: #111111;
+                        color:#F1F1F1;
+                        border:0;   
+                        min-width: 200px;
+                        padding: 0;
+                        border-radius: 0px 0px 4px 4px;
+                        box-shadow: 0px 0px 5px #111;
+                        .dropdown-item {
+                            color:#ffffff;
+                            text-transform: uppercase;
+                            font-size: .75rem;
+                            padding: .5rem 1.5rem;
+                            &:hover, &:focus {
+                                background:#111;
+                                color:#F1f1f1;
+                                overflow:hidden;
+                            }
+                            &:last-child {
+                                border-radius: 0px 0px 4px 4px;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+footer {
+    min-height: 450px;
+}
+#shortcuts {
+    background:$gba;
+}
+
+
+    .vid-wrapper {
+        .vid-player {
+            height: 120px;
+            background:#000;
+            background-size: cover;
+            position:relative;
+            background-position: center center;
+        }
+        &.destacado {
+            .vid-player,
+            .plyr {
+                height: 360px!important;
+            }
+        }
+        h4 {
+            margin-top: 15px;
+            padding-right: 10px;
+            font-size:1.2rem;
+            line-height: 1.3rem;
+            font-weight: 600;
+        }
+        h5 {
+            margin-top: 15px;
+            margin-bottom:30px;
+            padding-right: 10px;
+            font-size:0.9rem;
+            line-height: 1.3rem;
+            font-weight: 600;
+        }
+    }
+    .slick-x4 {
+        .vid-wrapper {
+            .vid-player {
+                height: 150px!important;
+                background:#000;
+                background-size: cover;
+                position:relative;
+            }
+            &.destacado {
+                .vid-player,
+                .plyr {
+                    height: 360px!important;
+                }
+            }
+            .plyr {
+                height:150px!important;
+            }
+        }
+    }
+
+
+
+
+///*** PLYR ***///
+.plyr--video .plyr__controls {
+    padding-top:0;
+}
+.plyr__volume {
+    min-width: auto;
+    width: auto;
+}
+.plyr__controls .plyr__controls__item:first-child {
+    margin-right: 0;
+}
+.plyr__controls .plyr__controls__item.plyr__time {
+    margin-right:auto;
+}
+.plyr__control {
+    display: block;
+}
+.plyr__video-wrapper {
+    padding-bottom:0px;
+    padding-top:0px;
+}
+.plyr {
+    height:120px!important;
+}
+.interna .plyr {
+    height: auto!important;
+}
+
+///*** SLICK ***///
+.slick-slider {
+    margin:0;
+    .slick-list {
+        margin: 0 -10px;
+        .slick-track {
+            .slick-slide {
+                margin: 0 10px;
+                .vid-wrapper {
+                    .vid-player {
+                        height: 120px;
+                        background:#000;
+                        background-size: cover;
+                        position:relative;
+                    }
+                }
+            }
+        }
+    }
+    button.slick-next,
+    button.slick-prev {
+        width:30px;
+        height:30px;
+        position:absolute;
+        &:before {
+            color:$secondary;
+            font-family: inherit;
+        }
+    }
+    button.slick-next.slick-arrow {
+        top: -40px;
+        right: 0;
+    }
+    button.slick-prev.slick-arrow {
+        top: -40px;
+        right: 25px;
+        left:auto;
+    }
+}
+.slick-preload {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    margin: 0;
+    &.slick-initialized {
+        visibility: visible;
+        opacity: 1;    
+    }
+}

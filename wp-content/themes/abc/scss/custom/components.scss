@@ -1,0 +1,119 @@
+.vid-wrapper h5 a,
+.video-item__title a {
+    color: #1a051d;
+    line-height: 1.4;
+    font-weight: 500;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.bg-dark {
+    .vid-wrapper h5 a,
+    .video-item__title a {
+        color: #f1f1f1;
+    }
+}
+.destacado,
+.side-destacado {
+    .vid-wrapper h5 a,
+    .video-item__title a {
+        color: $primary!important;
+    }   
+}
+.destacado,
+.side-destacado {
+    .vid-wrapper h4 a,
+    .video-item__title a {
+        color: $primary!important;
+        font-size: 20px;
+    }   
+}
+.bg-dark {
+    .destacado,
+    .side-destacado {
+        .vid-wrapper h5 a,
+        .video-item__title a {
+            color: #fcfcfc!important;
+        }   
+    }
+    .destacado,
+    .side-destacado {
+        .vid-wrapper h4 a,
+        .video-item__title a {
+            color: #fcfcfc!important;
+            font-size: 20px;
+        }   
+    }
+}
+
+#player {
+    background: #000000;
+}
+.section-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    font-weight: 500;
+    color: #1a051d;
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ededed;
+    }
+    span {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+        &:before {
+            content: '';
+            position: absolute;
+            width: calc(100% + 30px);
+            height: 1px;
+            bottom: 0;
+            background-color: $gba;
+        }
+    }
+}
+
+.video-item {
+    display: flex;
+    align-items: start;
+    margin-bottom: 24px;
+    position: relative;
+    .video-item__thumbnail,
+    .vid-player {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+    }
+    .video-item__thumbnail {
+        width: 35%;
+    }
+    .video-item__content {
+        padding-left: 12px;
+        width: calc(65% - 12px);
+        .video-item__meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .video-item__category {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom:3px;
+            font-size: 12px;
+        }
+        .video-item__desc {
+            display: none;
+        }
+    }
+}
+:root {
+--plyr-color-main:#e22450;
+}

@@ -1,0 +1,16 @@
+
+body {
+    background: #FFF;
+    font-size:14px;
+}
+a {
+    transition: all .3s;
+    color: #6aacdb;
+    &:hover {
+        color:darken(#6aacdb, 10%);
+        text-decoration: none;
+    }
+}
+.cl-secondary {
+    color: #aba4ac;
+}

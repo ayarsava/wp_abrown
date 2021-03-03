@@ -4,7 +4,7 @@ Crear entorno local
 ---------------
 
 * Crear directorio de trabajo y acceder a el
-* `git clone https://github.com/ayarsava/wp_abc.git`
+* `git clone https://github.com/ayarsava/wp_abrown.git`
 * Correr `docker-compose up` en el terminal y acceder a http://localhost:8004
 
 El puerto a acceder se encuentra seteado en la linea 20 de docker-compose.yml, el mismo puede ser configurado de acuerdo a sus necesidades.
@@ -20,7 +20,7 @@ Crear entorno en producción
 * `rmdir ./wordpress/`
 * `rm -f latest.tar.gz`
 * Instalar wordpress
-* `git clone https://github.com/ayarsava/wp_abc.git`
+* `git clone https://github.com/ayarsava/wp_abrown.git`
 
 
 Setup general

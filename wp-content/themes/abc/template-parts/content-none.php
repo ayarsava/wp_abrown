@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'abc' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nada por aquí...', 'abc' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -41,7 +41,7 @@
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'abc' ); ?></p>
+			<p><?php esc_html_e( 'No hemos encontrado contenidos relacionados. Tal vez quieras realizar una búsqueda.', 'abc' ); ?></p>
 			<?php
 			get_search_form();
 

@@ -1,16 +1,24 @@
+.home {
+    .vid-wrapper h5 a,
+    .vid-wrapper .video-title,
+    .video-item__title a {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
 .vid-wrapper h5 a,
+.vid-wrapper .video-title a,
 .video-item__title a {
     color: #1a051d;
     line-height: 1.4;
     font-weight: 500;
-    font-size: 14px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 .bg-dark {
     .vid-wrapper h5 a,
+    .vid-wrapper .video-title a,
     .video-item__title a {
         color: #f1f1f1;
     }
@@ -18,15 +26,16 @@
 .destacado,
 .side-destacado {
     .vid-wrapper h5 a,
+    .vid-wrapper .video-title a,
     .video-item__title a {
-        color: $primary!important;
+        color: $primary;
     }   
 }
 .destacado,
 .side-destacado {
     .vid-wrapper h4 a,
     .video-item__title a {
-        color: $primary!important;
+        color: $primary;
         font-size: 20px;
     }   
 }
@@ -34,6 +43,7 @@
     .destacado,
     .side-destacado {
         .vid-wrapper h5 a,
+        .vid-wrapper .video-title a,
         .video-item__title a {
             color: #fcfcfc!important;
         }   
@@ -45,6 +55,12 @@
             color: #fcfcfc!important;
             font-size: 20px;
         }   
+    }
+}
+.archive .vid-wrapper {
+    margin-bottom:3rem;
+    .video-title a {
+        font-size: 1.1rem;
     }
 }
 
@@ -90,6 +106,7 @@
         position: relative;
         overflow: hidden;
         border-radius: 4px;
+        height: auto;
     }
     .video-item__thumbnail {
         width: 35%;
@@ -114,6 +131,44 @@
         }
     }
 }
-:root {
---plyr-color-main:#e22450;
+
+/*** GUTEMBERG ***/
+.gutemberg {
+    p, figure, h1, h2, h3, h4, h5, h6 {
+        width: 70%;
+        margin-left:auto;
+        margin-right: auto;
+        &.alignfull {
+            width: 100%;
+            margin-left:auto;
+            margin-right: auto;
+        }
+        @media (max-width:787px) {
+            width: 100%;
+        }
+    }
+}
+.excerpt {
+    width: 70%;
+    @media (max-width:787px) {
+        width: 100%;
+    }
+    margin-left:auto;
+    margin-right: auto;
+
+}
+.page-title,
+.entry-title {
+    font-size: 4rem;
+    font-weight: 700;
+    @media (max-width:787px) {
+        font-size:2.5rem;
+    }
+}
+.svg-icon {
+    height: 1em;
+    margin-top: -4px;
+    pointer-events: none;
+    vertical-align: middle;
+    width: 1em;
 }

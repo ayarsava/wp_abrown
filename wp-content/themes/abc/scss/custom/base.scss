@@ -1,7 +1,6 @@
 
 body {
     background: #FFF;
-    font-size:14px;
 }
 a {
     transition: all .3s;
@@ -10,7 +9,13 @@ a {
         color:darken(#6aacdb, 10%);
         text-decoration: none;
     }
+    &:focus {
+        outline: none;
+    }
 }
 .cl-secondary {
     color: #aba4ac;
+}
+:root {
+--plyr-color-main:#6aacdb;
 }

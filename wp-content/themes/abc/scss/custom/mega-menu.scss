@@ -1,0 +1,238 @@
+/* vars */
+
+$menu_background: $secondary;
+$menu_color: #e2e2e2;
+$menu_active: #6aacdb;
+$menu_toggle_background: $secondary;
+$menu_border: 1px solid rgba(255,255,255,0.1);
+$menu_padding: 10px;
+$menu_icon_padding: 5px 10px;
+$menu_breakpoint: 991px;
+
+/* hide show mixin */
+
+@mixin show () {
+  display: block;
+  //animation: grow .5s ease-in-out; // optional animation
+}
+
+@mixin hide () {
+  display: none;
+}
+
+/* global  styles */
+
+.menu {
+  background: $menu_background;
+  font-size: 0.85rem;
+}
+
+.menu ul { 
+  margin: 0; 
+  padding: 0; 
+  list-style: none; 
+} 
+
+.menu,
+.menu a {
+  color: $menu_color;
+  text-decoration: none;
+  &.active,
+  &:hover {
+    color: $menu_active;
+  }
+}
+
+.menu a {
+  display: block;
+  svg {
+    position: relative;
+    top: -2px;
+    margin-right: 6px;
+    left: 0;
+    width: 20px;
+  }
+}
+
+.menu-dropdown,
+.menu input[type="checkbox"] { // hide defaults
+  @include hide;
+}
+
+.menu label:hover {
+  cursor: pointer;
+}
+
+/* narrow styles */
+
+@media screen and (max-width: 1200px) {
+  // hide navigation and right icons
+  .menu > ul,
+  .menu-righticon {
+    @include hide;
+  }
+  input[type="checkbox"]:checked + ul {
+    @include show;
+  }
+}
+
+/* large styles */
+
+@media screen and (min-width: $menu_breakpoint + 1px) {
+  // hide show navigation button and checkboxes
+  .menu > label,
+  input[type="checkbox"] {
+    @include hide;
+  }
+  .menu a {
+    padding: $menu_padding;
+    white-space: nowrap; // prevent links form going to a new line
+    font-weight: 600;
+  }
+  // align items and style them
+  .menu > ul > li {
+    display: inline-block;
+  }
+  // hover logics
+  .menu-hasdropdown {
+    position: relative;
+    &:hover {
+      > ul {
+        @include show;
+      }
+    }
+    a label {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  }
+  // dropdown position and style
+  .menu-hasdropdown > ul {
+    position: absolute;
+    top:100%;
+    left: -10px;
+    background: $menu_background;
+    z-index: 9;
+    li {
+      padding-left:10px;
+      padding-right: 10px;
+    }
+  }
+  // flyout position
+  .menu-hasflyout > ul {
+    left: 100%;
+    top:0;
+  }
+  .menu-hasflyout .menu-downicon {
+    @include hide;
+  }
+}
+
+
+
+
+
+/* look and feel only, not needed for core menu*/
+
+// optional animation for display none/block
+@keyframes grow {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  50% {
+    display: block;
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html { font-size: 100%; }
+body {
+  font-family: 'Roboto' sans-serif;
+  line-height: 1.5;
+}
+
+.menu-dropdown li {
+  a {
+    padding: $menu_padding;
+    border-bottom: $menu_border;
+  }
+  &:last-child a {
+    border-bottom: 0;
+  }
+}
+
+/* narrow  */
+@media screen and (max-width: $menu_breakpoint) {
+ .menu > label {
+    background: $menu_toggle_background;
+    display: block;
+    padding: 10px 0;
+    text-align: right;
+    margin-bottom:0;
+  }
+  .menu a {
+    padding: $menu_padding;
+    padding-left: 0px;
+
+    label {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      top: 1px;
+      left: 0px;
+      text-align:center;
+      width: 1.5rem;
+    }
+  }
+  .menu > ul {
+    li ul {
+      @media screen and (max-width:991px) {
+        li a {
+          padding: 10px 20px;
+        }
+      }
+      li {
+        padding-left:31px;
+        @media screen and (max-width:991px) {
+          padding-left:0px;
+          overflow: hidden;
+          ul {
+          }
+        }
+      }
+    }
+    i {
+      //float: right;
+      //padding: $menu_icon_padding;
+      background: darken($menu_background,15%);
+    }
+  }
+  ul.menu-dropdown {
+    position: relative;
+    left: -15px;
+    right: -15px;
+    width: calc(100% + 30px);
+    li ul li a {
+      padding: 10px 35px;
+    }
+  }
+  .menu-dropdown  a {
+    background: darken($menu_background,5%);
+  }
+  .menu-hasflyout > ul a {
+    background: darken($menu_background,10%);
+  }
+}
+
+@media screen and (min-width: $menu_breakpoint + 1px) {
+  .menu {
+    //margin: 0 auto;
+  }
+}
